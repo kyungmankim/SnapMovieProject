@@ -1,20 +1,26 @@
-package kr.ac.mju.snapmovie;
+package kr.ac.mju.snapmovie.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import kr.ac.mju.snapmovie.R;
 
 
-
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements View.OnClickListener {
+    Button testButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("test","haha");
+
+        testButton = (Button) findViewById(R.id.button_test);
+        testButton.setOnClickListener(this);
     }
 
     @Override
@@ -27,12 +33,19 @@ public class MainActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
+        // automatically handle clicks on the Home/Up b`utton, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClick(View v) {
+        if (v.getId() == R.id.button_test) {
+            Intent intent = new Intent(this, VideoActivity.class);
+            startActivity(intent);
+        }
     }
 }

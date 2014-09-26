@@ -2,7 +2,9 @@
 <resources>
 
     <string name="app_name">SnapMovie</string>
+    <string name="activity_video">SnapMovie</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string name="album_name">SnapMovie</string>
 </resources>
